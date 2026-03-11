@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer components {
+  .btn-custom {
+    @apply bg-red-100
+  }
+
+  .smooth-default{
+    @apply transition-all duration-100
+  }
+
+  .smooth-avg{
+    @apply transition-all duration-500
+  }
+}
