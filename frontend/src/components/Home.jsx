@@ -33,17 +33,31 @@ function Hero(){
 
 function BodyContent(){
     return (
-        <div className='p-10 flex'>
-            <Card stylee={'w-[40em] h-[50em]'}>
-                <div className='w-full text-center'>
-                    <p className='font-bold text-[2em] mb-4'>Borrowed Books</p>
-                    <ul>
-                        <li>Noli me Tingali</li>
-                        <li>El Filipino Burismo</li>
+        <div className='p-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 justify-around'>
+            <Card stylee={'h-[34em] w-[34em] smooth-avg'}>
+                <div className='w-full text-center text-gray-800'>
+                    <p className='text-green-700 font-bold text-[2.5em] mb-2 p-4'>Borrowed Books</p>
+                    <ul className='bg-gray-200 text-gray-800 text-center text-xl text-center p-4 py-6'>
+                        <li>Noli Me Tangere</li>
+                        <li className=''>Mathematics: From Ancient to Modern</li>
+                        <li>Physics for the Curious Mind</li>
+                        <li>Biology: Life and Evolution</li>
+                        <li>Historia de la Ciencia</li>
+                        <li>Introduction to Philosophy</li>
+                        <li>Les Fondements de la Chimie</li>
+                        <li>World Geography: Patterns and Processes</li>
+                        <li>Computer Science Essentials</li>
+                        <li>El Arte de la Literatura</li>
+                        <li>Environmental Studies: Our Planet Today</li>
                     </ul>
                 </div>
+            </Card>
 
-                
+            <Card stylee={'h-[34em] w-[34em] smooth-avg'}>
+                <p className='text-green-700 font-bold text-[2.5em] mb-2 p-4'>Most Borrowed Books</p>
+            </Card>
+            <Card stylee={'h-[34em] w-[34em] smooth-avg'}>
+                <p className='text-green-700 font-bold text-[2.5em] mb-2 p-4'>Most Popular Books</p>
             </Card>
         </div>
     );
