@@ -13,3 +13,9 @@
     @apply transition-all duration-500
   }
 }
+
+/* @media (min-width: 1920px){
+  .snapper{
+    background-color: red;
+  }
+} */

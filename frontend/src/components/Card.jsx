@@ -1,7 +1,9 @@
-function Card({ children }) {
+function Card({ children, stylee }) {
   return (
-    <div className="p-6 bg-gray-100 rounded shadow-md flex">
-      {children}
+    <div className="flex">
+      <div className={`p-6 bg-gray-100 rounded shadow-md flex ${stylee}`}>
+        {children}
+      </div>
     </div>
   );
 }
