@@ -4,5 +4,6 @@ import Navbar from './Navbar';
 import Home from './Home';
 import useBooks from './Books'
 import BookPage from './BookPage';
+import { BorrowBook } from './BookPage';
 
-export { Card, Button, Navbar, Home, useBooks, BookPage};
+export { Card, Button, Navbar, Home, useBooks, BookPage, BorrowBook};

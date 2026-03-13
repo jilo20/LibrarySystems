@@ -72,7 +72,8 @@ function BodyContent() {
                 <div className='w-full text-center text-gray-800 flex flex-col'>
                     <p className='text-green-700 font-bold text-[2.5em] p-4'>Borrowed Books</p>
                     <div className='bg-gray-50 flex-1 p-6'>
-                        <ul className='flex flex-col gap-2 text-lg'>
+                        <ul className='flex flex-col gap-2 text-lg
+                        '>
                             <li className='font-light'>Mathematics: From Ancient to Modern</li>
                             <li className='font-light'>Physics for the Curious Mind</li>
                             <li className='font-light'>Biology: Life and Evolution</li>

@@ -1,5 +1,6 @@
 import Button from './Button'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
+import { BorrowBook } from './BookPage';
 
 function Navbar(){
     return (
@@ -8,10 +9,10 @@ function Navbar(){
                 <img  src={logo} alt="Logo"  className='h-12 object-cover'/>
             </div>
             <div className="flex gap-6">
-                <Button content={'Home'} variant='navbutton' style={''}/>
-                <Button content={'Books'} variant='navbutton'/>
-                <Button content={'Borrow Book'} variant='navbutton'/>
-                <Button content={'Return Book'} variant='navbutton'/>
+                <Button content={'Home'} variant='navbutton' route={'/'}/>
+                <Button content={'Books'} variant='navbutton' route={'/books'}/>
+                <Button content={'Borrow Book'} variant='navbutton' route={'/borrowbook'}/>
+                <Button content={'Return Book'} variant='navbutton' route={'/returnbook'}/>
             </div>
             <div className=''>
                 <Button content={'Login'}/>
