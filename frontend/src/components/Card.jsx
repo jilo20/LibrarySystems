@@ -1,8 +1,8 @@
-function Card({ children, stylee }) {
+function Card({ children, stylee, animation=true }) {
   return (
   <div className="flex relative">
 
-    <div className={`hover:scale-102 p-6 bg-gray-100 rounded shadow-md flex ${stylee}`}>
+    <div className={`${animation ? 'hover:scale-102' : ''} p-6  rounded shadow-lg flex overflow-hidden ${stylee}`}>
       {children}
     </div>
   </div>

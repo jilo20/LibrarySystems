@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import {Navbar,Button ,Card, Home} from './components' 
+import {Navbar,Button ,Card, Home, BookPage} from './components' 
 
 function App() {
 
   return (
     <div className='min-h-screen w-full'>
       <Navbar/>
-      <Home/>
+      {/* <Home/> */}
+      <BookPage/>
     </div>
   )
 }
