@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import {Navbar,Button ,Card, Home, BookPage,BorrowBook} from './components' 
+import {Navbar,Button ,Card, Home, BorrowBook, ReturnBook} from './components' 
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -10,11 +10,10 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/borrowbook' element={<BorrowBook/>}/>
+        <Route path='/borrowbook' element={<BorrowBook/>}/> 
+        <Route path='/returnbook' element={<ReturnBook/>}/>
         <Route path='*' element={<Home/>}/>
       </Routes>
-      {/* <Home/> */}
-      <BookPage/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import Button from './Button'
 import logo from '../assets/logo.png';
-import { BorrowBook } from './BookPage';
+// import { BorrowBook } from './BorrowBook';
 
 function Navbar(){
     return (

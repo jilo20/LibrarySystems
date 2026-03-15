@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Button({content, variant, isSubmit=false,route}){
+function Button({content, variant, isSubmit=false,route, stylee}){
 
     return (
         <>
@@ -31,7 +31,7 @@ function Button({content, variant, isSubmit=false,route}){
 
             {variant==='secondarybtn' &&
             <button type={isSubmit ? "submit" : "button"}
-                className={`hover:scale-103 group bg-green-700 text-gray-100 font-semibold text-xl border-2 border-gray-100 p-3 px-10 rounded-lg hover:bg-green-600 smooth-avg`}>
+                className={`hover:scale-103 group text-gray-100 font-semibold text-xl border-2 border-gray-100 p-3 px-10 rounded-lg hover:bg-green-600 smooth-avg ${stylee}`}>
                 {content}
             </button>}
         </>
