@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import logo from '../assets/librarybg.jpg';
 import useBooks from './Books';
 import Button from './Button';
 import Card from './Card';
+import useTransactions from './Transactions';
 
 function Home({ children }) {
     return (
@@ -34,6 +36,12 @@ function Hero() {
 
 function BodyContent() {
     const books = useBooks();
+    const {transactions, refreshTransactions} = useTransactions();
+    const transactionsBookTitles = transactions.map((t) => {
+        const book = books.find(b => b.bookId === t.book);
+        return book.bookTitle;
+    })
+    console.log(transactionsBookTitles);
 
     return (
         <div className='p-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 justify-around'>
@@ -42,8 +50,8 @@ function BodyContent() {
                     <p className='text-green-700 font-bold text-[2.5em] p-4'>Borrowed Books</p>
                     <div className='bg-gray-50 flex-1 p-6'>
                         <ul className='flex flex-col gap-2'>
-                            {books.map((book) => (
-                                <li key={book.bookId} className='font-light text-lg'>{book.bookTitle}</li>
+                            {transactionsBookTitles.map((transact,index) => (
+                                <li key={index} className='font-light text-lg'>{transact}</li>
                             ))}
                         </ul>
                     </div>
@@ -51,7 +59,7 @@ function BodyContent() {
             </Card>
             <Card stylee={'h-[34em] w-[34em] smooth-avg'}>
                 <div className='w-full text-center text-gray-800 flex flex-col'>
-                    <p className='text-green-700 font-bold text-[2.5em] p-4'>Borrowed Books</p>
+                    <p className='text-green-700 font-bold text-[2.5em] p-4'>Most Borrowed Books</p>
                     <div className='bg-gray-50 flex-1 p-6'>
                         <ul className='flex flex-col gap-2 text-lg'>
                             <li className='font-light'>Mathematics: From Ancient to Modern</li>
@@ -70,7 +78,7 @@ function BodyContent() {
             </Card>
             <Card stylee={'h-[34em] w-[34em] smooth-avg'}>
                 <div className='w-full text-center text-gray-800 flex flex-col'>
-                    <p className='text-green-700 font-bold text-[2.5em] p-4'>Borrowed Books</p>
+                    <p className='text-green-700 font-bold text-[2.5em] p-4'>Popular Books</p>
                     <div className='bg-gray-50 flex-1 p-6'>
                         <ul className='flex flex-col gap-2 text-lg
                         '>

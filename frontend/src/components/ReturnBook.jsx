@@ -26,21 +26,22 @@ export default function ReturnBook(){
 
         //REQUERST PATCH AHHAHAHAHAHA
 
-        // if(transactionId !== NULL) {
-        //     const response = await fetch(`http://localhost:8000/api/transactions/${transactionId}/`, {
-        //         method: 'PATCH',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(sendData)
-        //     });
-        // }
+        const transactionToUpdate = transactions.find(t => t.book === bookId && t.isReturned === false);
+        console.log('Trasaction to Update ',transactionToUpdate);
+        const transactionId = String(transactionToUpdate.id);
 
+        const response = await fetch(`http://localhost:8000/api/transactions/${transactionId}/`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(sendData)
+        });
 
-        // if(response.ok){
-        //     fetchTransactions();
-        //     alert("Book returned");
-        // }
+        if(response.ok){
+            fetchTransactions();
+            alert("Book returned");
+        }
     }
 
     return (
