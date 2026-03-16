@@ -7,9 +7,9 @@ import Card from "./Card";
 
 export default function ReturnBook(){
 
-    const students = useStudents();
+    const {students} = useStudents();
     const { transactions, fetchTransactions } = useTransactions();
-    const books = useBooks();
+    const {books} = useBooks();
     const [bookId, setBookId] = useState('');
 
     const handleSubmit = async (e) => {
@@ -24,7 +24,6 @@ export default function ReturnBook(){
         if(!transactionExist) {alert('Book is not borrowed'); return;}
         console.log(bookId);
 
-        //REQUERST PATCH AHHAHAHAHAHA
 
         const transactionToUpdate = transactions.find(t => t.book === bookId && t.isReturned === false);
         console.log('Trasaction to Update ',transactionToUpdate);

@@ -1,13 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function useBooks() {
   const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/books/")
-      .then(res => res.json())
-      .then(data => setBooks(data));
-  }, []);
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/books/");
+      const data = await response.json();
+      setBooks(data);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
 
-  return books;
+  useEffect(() => {
+    fetchBooks();
+  }, [fetchBooks]);
+
+  return { books, fetchBooks };
 }

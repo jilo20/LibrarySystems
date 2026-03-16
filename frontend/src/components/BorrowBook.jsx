@@ -9,9 +9,9 @@ export default function BorrowBook() {
     //states for inputs
     const [bookId, setBookId] = useState('');
     const [studentId, setStudentId] = useState('');
-    const students = useStudents();
+    const {students} = useStudents();
     const { transactions, fetchTransactions } = useTransactions();
-    const books = useBooks();
+    const {books} = useBooks();
 
     const handleSubmit = async (e) => {
         e.preventDefault();

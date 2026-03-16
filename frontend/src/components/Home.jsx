@@ -35,13 +35,16 @@ function Hero() {
 }
 
 function BodyContent() {
-    const books = useBooks();
-    const {transactions, refreshTransactions} = useTransactions();
-    const transactionsBookTitles = transactions.map((t) => {
+    const { books } = useBooks();
+    const { transactions } = useTransactions();
+
+    const activeTransactions = transactions.filter(t => t.isReturned === false);
+
+    const transactionsBookTitles = activeTransactions.map((t) => {
         const book = books.find(b => b.bookId === t.book);
-        return book.bookTitle;
-    })
-    console.log(transactionsBookTitles);
+        return book ? book.bookTitle : "Unknown Title";
+    });
+    
 
     return (
         <div className='p-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 justify-around'>
@@ -50,7 +53,7 @@ function BodyContent() {
                     <p className='text-green-700 font-bold text-[2.5em] p-4'>Borrowed Books</p>
                     <div className='bg-gray-50 flex-1 p-6'>
                         <ul className='flex flex-col gap-2'>
-                            {transactionsBookTitles.map((transact,index) => (
+                            {transactions.length > 0 && transactionsBookTitles.map((transact,index) => (
                                 <li key={index} className='font-light text-lg'>{transact}</li>
                             ))}
                         </ul>
